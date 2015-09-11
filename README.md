@@ -15,7 +15,7 @@ Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/rin
 ### Send an SMS
 
 ```php
-require_once(__DIR__ . '/path/to/ringcentrallite.php');
+require_once('/path/to/ringcentrallite.php');
 
 $rc = new RingCentralLite('myAppKey', 'myAppSecret', RingCentralLite::RC_SERVER_SANDBOX);
 $resAuth = $rc->authorize('myUsername', 'myExtension', 'myPassword');
