@@ -1,5 +1,11 @@
 <?
 
+/**
+ * To use this demo, copy rc-credentials-sample.json
+ * to rc-credentials.json and populate with your actual
+ * credentials
+ */
+
 require_once(__DIR__ . '/../src/ringcentrallite.php');
 
 $credentials = json_decode(file_get_contents('./rc-credentials.json'), true);

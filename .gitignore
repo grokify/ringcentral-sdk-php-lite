@@ -1,5 +1,1 @@
-.idea
 demo/rc-credentials.json
-dist
-composer*.lock
-vendor
