@@ -17,21 +17,13 @@ Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/rin
 ```php
 require_once(__DIR__ . '/path/to/ringcentrallite.php');
 
-$credentials    =  array(
-	'appKey'    => 'myAppKey',
-	'appSecret' => 'myAppSecret',
-	'username'  => 'myUsername', // RingCentral phone number
-	'extension' => 'myExtension',
-	'password'  => 'myPassword'
-);
-
-$rc = new RingCentralLite($credentials['appKey'], $credentials['appSecret'], RingCentralLite::RC_SERVER_SANDBOX);
-$resAuth = $rc->authorize($credentials['username'], $credentials['extension'], $credentials['password']);
+$rc = new RingCentralLite('myAppKey', 'myAppSecret', RingCentralLite::RC_SERVER_SANDBOX);
+$resAuth = $rc->authorize('myUsername', 'myExtension', 'myPassword');
 
 $params = array(
     'json'     => array(
         'to'   => array( array('phoneNumber' => '12223334444') ), // Text this number
-        'from' => array('phoneNumber' => $credentials['username']), // From a valid RingCentral number
+        'from' => array('phoneNumber' => '12223335555'), // From a valid RingCentral number
         'text' => 'SMS from RingCentral Lite PHP SDK'
     )
 );
