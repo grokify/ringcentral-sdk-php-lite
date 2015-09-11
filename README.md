@@ -1,9 +1,9 @@
 RingCentral Lite SDK for PHP
 ============================
 
-This is a lightweight, minimal dependency RingCentral SDK for PHP.
+This is an experimental, lightweight, minimal dependency RingCentral SDK for PHP.
 
-Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/ringcentral-php).
+Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/ringcentral-php) if possible.
 
 ## Quickstart
 
