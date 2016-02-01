@@ -1,6 +1,9 @@
 RingCentral Lite SDK for PHP
 ============================
 
+[![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
+[![License][license-svg]][license-link]
+
 This is an experimental, lightweight, minimal dependency RingCentral SDK for PHP.
 
 Goals include:
@@ -35,4 +38,10 @@ $resSms = $rc->post('account/~/extension/~/sms', $params);
 
 RingCentral Lite SDK for PHP is available under an MIT-style license. See the `LICENSE.txt` file for details.
 
-RingCentral Lite SDK for PHP &copy; 2015 by John Wang
+RingCentral Lite SDK for PHP &copy; 2015-2016 by John Wang
+
+ [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/badges/quality-score.png?b=master
+ [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/?branch=master
+ [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
+ [license-link]: https://github.com/grokify/ringcentral-sdk-php-lite/blob/master/LICENSE.txt
+ 
