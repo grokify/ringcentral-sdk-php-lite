@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * To use this demo, copy rc-credentials-sample.json
