@@ -184,7 +184,7 @@ class RingCentralLite {
         } elseif (preg_match('/^https?:\/\//', $urlIn)) {
             $urlOut = $urlIn;
         } elseif (preg_match('/^(\/)?restapi/', $urlIn, $m)) {
-            if ($m && count($m)>0 && $m[0] == '/') {
+            if ($m && count($m)>0 && $m[1] == '/') {
                 $urlOut = $this->serverUrl . $urlIn;
             } else {
                 $urlOut = $this->serverUrl . '/' . $urlIn;
