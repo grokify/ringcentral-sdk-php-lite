@@ -9,6 +9,7 @@ This is an experimental, lightweight, minimal dependency RingCentral SDK for PHP
 Goals include:
 
 1. Legacy PHP support: No namespace usage
+1. Self-contained: No dependencies
 1. Embedded support: Single file deployment
 
 Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/ringcentral-php) if possible.
