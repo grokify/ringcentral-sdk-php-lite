@@ -17,6 +17,8 @@ Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/rin
 
 ### Send an SMS
 
+See [`examples/sms`](examples/sms) for working example.
+
 ```php
 require_once('/path/to/ringcentrallite.php');
 
@@ -32,6 +34,25 @@ $params = array(
 );
 $resSms = $rc->post('account/~/extension/~/sms', $params);
 
+```
+
+### Create Webhook
+
+See [`examples/webhook`](examples/webhook) for working example.
+
+```php
+$reqBody = array(
+    'eventFilters' => array(
+        '/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS',
+        '/restapi/v1.0/subscription/~?threshold=86400&interval=3600'
+    ),
+    'deliveryMode'      => array(
+        'transportType' => 'WebHook',
+        'address'       => 'https://12345678.ngrok.io/hook.php'
+    )
+);
+
+$resBody = $client->post('subscription', array('json' => $body));
 ```
 
 ## License
