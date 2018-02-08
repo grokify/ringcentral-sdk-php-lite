@@ -57,7 +57,15 @@ Note, the built-in server may be too slow to respond and result in a webhook err
 
 To use the built-in Apache web server on MacOS, you can simply copy the files to the webserver document root at `/Library/WebServer/Documents`.
 
-Ensure you have ngrok running, if needed, so you have the proper URL to add to `.rc-credentials.json`. In this case, your webhook URL will have the repo path and look like:
+Ensure you have ngrok running, if needed, so you have the proper URL to add to `.rc-credentials.json`. Since the built-in webserver runs on port `80` you will need to have ngrok point to port 80:
+
+`$ ngrok http 80`
+
+You will see a URL like:
+
+`https://12345678.ngrok.io -> localhost:80`
+
+In this case, your webhook URL will have the repo path and look like:
 
 `https://12345678.ngrok.io/ringcentral-sdk-php-lite/examples/webhook/hook.php`
 
