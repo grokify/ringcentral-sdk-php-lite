@@ -174,12 +174,13 @@ class RingCentralLite {
 
     protected function inflateUrl($urlIn = '') {
         $urlOut = '';
+        $m = array();
         if (strlen($urlIn)==0) {
             $urlOut = $urlIn;
-        } elseif (preg_match('/^https?:\/\//',$urlIn)) {
+        } elseif (preg_match('/^https?:\/\//', $urlIn)) {
             $urlOut = $urlIn;
-        } elseif (preg_match('/^(\/)?restapi/',$urlIn, $m)) {
-            if (length($m)>0 && $m[0] == '/') {
+        } elseif (preg_match('/^(\/)?restapi/', $urlIn, $m)) {
+            if ($m && count($m)>0 && $m[0] == '/') {
                 $urlOut = $this->serverUrl . $urlIn;
             } else {
                 $urlOut = $this->serverUrl . '/' . $urlIn;

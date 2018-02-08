@@ -6,11 +6,11 @@
  * credentials
  */
 
-require_once(__DIR__ . '/../src/ringcentrallite.php');
+require_once(__DIR__ . '/../../src/ringcentrallite.php');
 
 $credentials = json_decode(file_get_contents('./rc-credentials.json'), true);
 
-$rc  = new RingCentralLite($credentials['appKey'], $credentials['appSecret'], RingCentralLite::RC_SERVER_SANDBOX);
+$rc  = new RingCentralLite($credentials['clientId'], $credentials['clientSecret'], RingCentralLite::RC_SERVER_SANDBOX);
 $res = $rc->authorize($credentials['username'], $credentials['extension'], $credentials['password']);
 
 $params = array(
