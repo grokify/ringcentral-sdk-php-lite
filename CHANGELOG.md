@@ -1,9 +1,9 @@
 CHANGELOG
 ---------
-- **2018-02-08**
+- **2018-02-08** - 0.0.3
   - Add `examples/webhook` mini-webhook demo app
-- **2016-02-01**
+- **2016-02-01** - 0.0.2
   - Add `demo/shs.php` SMS demo script
   - Add Scrutinizer CI shield
-- **2015-09-10**
+- **2015-09-10** - 0.0.1
   - Add initial commit
