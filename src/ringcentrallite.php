@@ -24,8 +24,8 @@ class RingCentralLite {
     const RC_SERVER_SANDBOX    = 'https://platform.devtest.ringcentral.com';
     const RC_SERVER_URL_PART   = '/restapi/v1.0';
 
-    protected $appKey          = '';
-    protected $appSecret       = '';
+    protected $clientID        = '';
+    protected $clientSecret    = '';
     protected $serverUrl       = '';
     protected $username        = '';
     protected $extension       = '';
@@ -33,9 +33,9 @@ class RingCentralLite {
     protected $refreshToken    = '';
     protected $authData        = array();
 
-    function __construct($appKey='', $appSecret='', $serverUrl = self::RC_SERVER_SANDBOX) {
-        $this->appKey    = $appKey;
-        $this->appSecret = $appSecret;
+    function __construct($clientID='', $clientSecret='', $serverUrl = self::RC_SERVER_SANDBOX) {
+        $this->clientID     = $clientID;
+        $this->clientSecret = $clientSecret;
 
         if (strtolower($serverUrl)=='production') {
             $this->serverUrl = self::RC_SERVER_PRODUCTION;
@@ -95,7 +95,7 @@ class RingCentralLite {
     }
 
     protected function getApiKey() {
-        $apiKey = base64_encode($this->appKey . ':' . $this->appSecret);
+        $apiKey = base64_encode($this->clientID . ':' . $this->clientSecret);
         $apiKey = preg_replace('/[\s\t\r\n]/','',$apiKey);
         return $apiKey;
     }
