@@ -60,7 +60,7 @@ $resBody = $client->post('subscription', array('json' => $body));
 
 RingCentral Lite SDK for PHP is available under an MIT-style license. See the [`LICENSE`](LICENSE) file for details.
 
-RingCentral Lite SDK for PHP &copy; 2015-2018 by John Wang
+RingCentral Lite SDK for PHP &copy; 2015-2018 by John Wang.
 
  [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/badges/quality-score.png?b=master
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/?branch=master
