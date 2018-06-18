@@ -140,13 +140,15 @@ class RingCentralLite {
 
     protected function apiCall($verb='', $url, $params, $try=0) {
         $ch = curl_init($this->inflateUrl($url));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $this->accessToken
-        ));
-        $ctJson = $this->getContentTypeForParams($params);
-        if (strlen($ctJson) > 0) {
+        $ct = $this->getContentTypeForParams($params);
+        if (strlen($ct) > 0) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Content-Type: ' . $this->getContentTypeForParams($params)
+                'Authorization: Bearer ' . $this->accessToken,
+                'Content-Type: ' . $ct
+            ));
+        } else {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: Bearer ' . $this->accessToken
             ));
         }
         if (strtoupper($verb)=='POST') {
