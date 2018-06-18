@@ -3,6 +3,7 @@ RingCentral Lite SDK for PHP
 
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
 [![License][license-svg]][license-link]
+[![Stack Overflow][stackoverflow-svg]][stackoverflow-url]
 
 This is an experimental, lightweight, minimal dependency RingCentral SDK for PHP.
 
@@ -16,7 +17,7 @@ Please use the [official RingCentral PHP SDK](https://github.com/ringcentral/rin
 
 ## Quickstart
 
-### Send an SMS
+### Send a SMS
 
 See [`examples/sms`](examples/sms) for working example.
 
@@ -28,13 +29,29 @@ $resAuth = $rc->authorize('myUsername', 'myExtension', 'myPassword');
 
 $params = array(
     'json'     => array(
-        'to'   => array( array('phoneNumber' => '12223334444') ), // Text this number
-        'from' => array('phoneNumber' => '12223335555'), // From a valid RingCentral number
+        'to'   => array( array('phoneNumber' => '+16505550111') ), // Text this number
+        'from' => array('phoneNumber' => '+16505550100'), // From a valid RingCentral number
         'text' => 'SMS from RingCentral Lite PHP SDK'
     )
 );
-$resSms = $rc->post('account/~/extension/~/sms', $params);
+$res = $rc->post('/restapi/v1.0/account/~/extension/~/sms', $params);
+```
 
+### Send a Fax
+
+See [`examples/fax`](examples/fax) for working example.
+
+```php
+require_once('/path/to/ringcentrallite.php');
+
+$rc = new RingCentralLite('myClientId', 'myClientSecret', RingCentralLite::RC_SERVER_SANDBOX);
+$resAuth = $rc->authorize('myUsername', 'myExtension', 'myPassword');
+
+$params = array(
+    'to'         => '+16505550111',
+    'attachment' => @.realpath('test_filepdf')
+);
+$res = $rc->post('/restapi/v1.0/account/~/extension/~/fax', $params);
 ```
 
 ### Create Webhook
@@ -66,4 +83,5 @@ RingCentral Lite SDK for PHP &copy; 2015-2018 by John Wang.
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/?branch=master
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
  [license-link]: https://github.com/grokify/ringcentral-sdk-php-lite/blob/master/LICENSE.txt
- 
+ [stackoverflow-svg]: https://img.shields.io/badge/stack%20overflow-ringcentral-orange.svg
+ [stackoverflow-url]: https://stackoverflow.com/questions/tagged/ringcentral
