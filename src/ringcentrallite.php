@@ -141,10 +141,15 @@ class RingCentralLite {
     protected function apiCall($verb='', $url, $params, $try=0) {
         $ch = curl_init($this->inflateUrl($url));
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer ' . $this->accessToken,
-            'Content-Type: ' . $this->getContentTypeForParams($params)
-         ));
-         if (strtoupper($verb)=='POST') {
+            'Authorization: Bearer ' . $this->accessToken
+        ));
+        $ctJson = $this->getContentTypeForParams($params);
+        if (strlen($ctJson) > 0) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: ' . $this->getContentTypeForParams($params)
+            ));
+        }
+        if (strtoupper($verb)=='POST') {
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $this->getBodyForParams($params));
         }
@@ -173,7 +178,7 @@ class RingCentralLite {
         if (array_key_exists('json', $params)) {
             return $this->prepareBody('application/json', $params['json']);
         }
-        return '';
+        return $params;
     }
 
     protected function inflateUrl($urlIn = '') {
