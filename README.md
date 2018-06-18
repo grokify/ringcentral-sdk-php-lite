@@ -5,6 +5,14 @@ RingCentral Lite SDK for PHP
 [![License][license-svg]][license-link]
 [![Stack Overflow][stackoverflow-svg]][stackoverflow-url]
 
+- [Overview](#overview)
+- [Quickstart](#quickstart)
+  - [Send a SMS](#send-a-sms)
+  - [Send a Fax](#send-a-fax)
+  - [Create a Webhook](#create-a-webhook)
+
+## Overview
+
 This is an experimental, lightweight, minimal dependency RingCentral SDK for PHP.
 
 Goals include:
@@ -54,7 +62,7 @@ $params = array(
 $res = $rc->post('/restapi/v1.0/account/~/extension/~/fax', $params);
 ```
 
-### Create Webhook
+### Create a Webhook
 
 See [`examples/webhook`](examples/webhook) for working example.
 
@@ -72,12 +80,6 @@ $reqBody = array(
 
 $resBody = $client->post('subscription', array('json' => $body));
 ```
-
-## License
-
-RingCentral Lite SDK for PHP is available under an MIT-style license. See the [`LICENSE`](LICENSE) file for details.
-
-RingCentral Lite SDK for PHP &copy; 2015-2018 by John Wang.
 
  [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/badges/quality-score.png?b=master
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/?branch=master
