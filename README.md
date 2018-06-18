@@ -57,7 +57,7 @@ $resAuth = $rc->authorize('myUsername', 'myExtension', 'myPassword');
 
 $params = array(
     'to'         => '+16505550111',
-    'attachment' => @.realpath('test_filepdf')
+    'attachment' => @.realpath('test_file.pdf')
 );
 $res = $rc->post('/restapi/v1.0/account/~/extension/~/fax', $params);
 ```
