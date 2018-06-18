@@ -78,7 +78,7 @@ $reqBody = array(
     )
 );
 
-$resBody = $rc->post('subscription', array('json' => $body));
+$res = $rc->post('subscription', array('json' => $body));
 ```
 
  [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/badges/quality-score.png?b=master
