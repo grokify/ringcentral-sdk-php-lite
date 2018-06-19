@@ -10,7 +10,7 @@ require_once(__DIR__ . '/../../src/ringcentrallite.php');
 
 loadDotEnv($_ENV['ENV_PATH']);
 
-$rc  = new RingCentralLite(
+$rc = new RingCentralLite(
     $_ENV['RINGCENTRAL_CLIENT_ID'],
     $_ENV['RINGCENTRAL_CLIENT_SECRET'],
     $_ENV['RINGCENTRAL_SERVER_URL']);
