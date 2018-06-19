@@ -138,7 +138,7 @@ class RingCentralLite {
         return $this->apiCall('DELETE', $url, $params, 0);
     }
 
-    protected function apiCall($verb='', $url, $params, $try=0) {
+    protected function apiCall($verb, $url, $params, $try=0) {
         $ch = curl_init($this->inflateUrl($url));
         $ct = $this->getContentTypeForParams($params);
         if (strlen($ct) > 0) {
@@ -151,7 +151,7 @@ class RingCentralLite {
                 'Authorization: Bearer ' . $this->accessToken
             ));
         }
-        if (strtoupper($verb)=='POST') {
+        if ($verb=='POST') {
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $this->getBodyForParams($params));
         }
