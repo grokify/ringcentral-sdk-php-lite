@@ -100,13 +100,11 @@ class RingCentralLite {
 
     protected function getApiKey() {
         $apiKey = base64_encode($this->clientID . ':' . $this->clientSecret);
-        $apiKey = preg_replace('/[\s\t\r\n]/','',$apiKey);
-        return $apiKey;
+        return preg_replace('/[\s\t\r\n]/','',$apiKey);
     }
 
     protected function tokenUrl() {
-        $url = $this->serverUrl . '/restapi/oauth/token';
-        return $url;
+        return $this->serverUrl . '/restapi/oauth/token';
     }
 
     protected function prepareBody($contentType,$body) {
@@ -123,19 +121,19 @@ class RingCentralLite {
     }
 
     public function get($url, $params) {
-        return $this->apiCall('GET', $url, $params, 0);
+        return $this->apiCall('GET', $url, $params);
     }
 
     public function post($url, $params) {
-        return $this->apiCall('POST', $url, $params, 0);
+        return $this->apiCall('POST', $url, $params);
     }
 
     public function put($url, $params) {
-        return $this->apiCall('PUT', $url, $params, 0);
+        return $this->apiCall('PUT', $url, $params);
     }
 
     public function delete($url, $params) {
-        return $this->apiCall('DELETE', $url, $params, 0);
+        return $this->apiCall('DELETE', $url, $params);
     }
 
     protected function apiCall($verb, $url, $params, $try=0) {
@@ -206,3 +204,5 @@ class RingCentralLite {
         return $urlOut;
     }
 }
+
+?>
