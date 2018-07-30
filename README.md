@@ -85,5 +85,5 @@ $res = $rc->post('subscription', array('json' => $body));
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-sdk-php-lite/?branch=master
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
  [license-link]: https://github.com/grokify/ringcentral-sdk-php-lite/blob/master/LICENSE.txt
- [stackoverflow-svg]: https://img.shields.io/badge/stack%20overflow-ringcentral-orange.svg
+ [stackoverflow-svg]: https://img.shields.io/badge/Stack%20Overflow-ringcentral-orange.svg
  [stackoverflow-url]: https://stackoverflow.com/questions/tagged/ringcentral
