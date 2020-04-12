@@ -5,9 +5,10 @@ $logfile = '/var/tmp/rchook.log';
 
 logString($logfile, $dt, 'RCHOOK_RECEIVED');
 
-if (array_key_exists('HTTP_VALIDATION_TOKEN', $_SERVER)) {
-    header("Validation-Token: {$_SERVER['HTTP_VALIDATION_TOKEN']}");
-    logString($logfile, $dt, "RCHOOK_HEADER_VALIDATION_TOKEN [{$_SERVER['HTTP_VALIDATION_TOKEN']}]");
+$v = isset($_SERVER['HTTP_VALIDATION_TOKEN']) ? $_SERVER['HTTP_VALIDATION_TOKEN'] : ‘’;
+if (strlen($v) > 0) {
+    header("Validation-Token: {$v}");
+    logString($logfile, $dt, "RCHOOK_HEADER_VALIDATION_TOKEN [{$v}]");
 } else {
     logString($logfile, $dt, 'RCHOOK_HEADER_NO_VALIDATION_TOKEN');
     $jsonBody = file_get_contents('php://input');
