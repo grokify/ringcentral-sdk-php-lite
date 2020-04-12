@@ -1,7 +1,6 @@
 <?php
 
-date_default_timezone_set('UTC');
-$dt = date('Y-m-d\TH:i:s\Z');
+$dt = gmdate('Y-m-d\TH:i:s\Z');
 $logfile = '/var/tmp/rchook.log';
 
 logString($logfile, $dt, 'RCHOOK_RECEIVED');
